@@ -373,9 +373,9 @@ int run_main(const char *input_text) {
 
     /* 
         - Dynamic calculation of NUM_MAPPERS based on word_count
-        - // 4 mappers for <= 1000 words, 5 mappers for 1001 words, 6 mappers for 2001 words, etc
+        - // 3 mappers for <= 1000 words, 5 mappers for 1001 words, 6 mappers for 2001 words, etc
     */
-    int NUM_MAPPERS = min(4, word_count / 1000 + 1); 
+    int NUM_MAPPERS = max(3, word_count / 1000 + 1); 
     data.num_mappers = NUM_MAPPERS;
 
     // Split the words into chunks for each mapper.
