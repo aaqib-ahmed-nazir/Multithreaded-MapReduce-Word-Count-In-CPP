@@ -345,7 +345,21 @@ void split_words_into_chunks(char **all_words, int word_count, char ***inputs, i
     }
 }
 
-int run_main(const char *input_text) {
+int run_main(const char *input_text) 
+{   
+    /*
+        - Parameters:
+            - input_text: the input text to be used for the test
+
+        - Returns:
+            - 0.
+
+        - Description:
+            - This function is the main function that runs the MapReduce algorithm.
+            - It splits the input text into words and then splits the words into chunks for each mapper.
+            - It creates threads for each mapper and reducer and waits for them to complete their work.
+            - It then prints the final output.
+    */
     SharedData data;
 
     data.intermediate_data = new KeyValue[MAX_WORDS];
