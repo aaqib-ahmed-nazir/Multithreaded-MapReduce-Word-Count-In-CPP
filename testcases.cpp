@@ -121,7 +121,7 @@ int main()
     }
 
     print_separator();
-    cout << GREEN << "\nTest Suite Completed: 10 tests executed." << RESET << endl;
+    cout << GREEN << "\nTest Completed: 10 tests executed." << RESET << endl;
     print_separator();
 
     return 0;
