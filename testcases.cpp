@@ -5,7 +5,6 @@
 #include "functions.h"
 #include <ctime>
 
-// ANSI color codes for better output formatting
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -14,9 +13,21 @@
 
 using namespace std;
 
-// Add helper function for string repetition
 string repeat_string(const string &str, int times)
 {
+    /*
+        - Parameters:
+            - str: string to be repeated
+            - times: number of times to repeat the string
+
+        - Returns:
+            - A string that is the concatenation of the input string repeated 'times' times.
+
+        - Description:
+            - This function takes a string and an integer as input and returns
+            a new string that is the concatenation of the input string repeated 'times' times.
+    */
+
     string result;
     for (int i = 0; i < times; i++)
     {
@@ -27,12 +38,38 @@ string repeat_string(const string &str, int times)
 
 void print_separator()
 {
+    /*
+        - Parameters:
+            - None
+
+        - Returns:
+            - None
+
+        - Description:
+            - This function prints a separator line to the console.
+    */
+
     cout << YELLOW << "\n================================================\n"
          << RESET;
 }
 
 void run_test(const char *input_text, const char *test_description, int test_num)
 {
+    /*
+        - Parameters:
+            - input_text: the input text to be used for the test
+            - test_description: a description of the test
+            - test_num: the test number
+
+        - Returns:
+            - None
+
+        - Description:
+            - This function runs a test case with the given input text and description.
+            - It redirects the standard input to the input text and then calls the run_main function.
+            - It measures the execution time of the run_main function and prints it to the console.
+    */
+
     print_separator();
     cout << BLUE << "Test #" << test_num << ": " << test_description << RESET << endl;
     cout << GREEN << "Input: \"" << input_text << "\"" << RESET << endl;
@@ -51,44 +88,32 @@ int main()
 {
     int test_counter = 1;
 
-    // Create a large input string for stress testing
     string large_input = repeat_string("apple ", 100) +
                          repeat_string("DELL ", 50) +
                          repeat_string("HP ", 100) +
                          repeat_string("Lenovo ", 250);
 
-    // Define 10 comprehensive test cases covering all scenarios
+    // Test Cases
     const char *test_cases[] = {
-        // 1. Basic input test with equal word counts
         "apple dell hp lenovo apple dell hp lenovo",
 
-        // 2. Different frequency test
         "apple apple apple dell dell hp lenovo",
 
-        // 3. Single word repeated test
         "apple apple apple apple apple apple apple apple apple",
 
-        // 4. Simple punctuation test
         "apple, dell. hp: lenovo, apple. dell",
 
-        // 5. Mixed spacing test
         "apple    dell   hp    lenovo   apple   dell",
 
-        // 6. Large input stress test (1750 groups of 4 words = 7000 words total)
         large_input.c_str(),
 
-        // 7. Short repeating pattern
         "apple dell apple dell apple dell",
 
-        // 8. All words once
         "apple dell hp lenovo",
 
-        // 9. Words with special characters
         "apple! dell@ hp# lenovo$ apple% dell^",
 
-        // 10. Words with mixed case (to test case sensitivity)
         "APPLE Dell HP lenovo Apple DELL hp LENOVO"};
-    // Run all test cases
     for (const char *test : test_cases)
     {
         string category = "Test Case " + to_string(test_counter);
