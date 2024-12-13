@@ -45,6 +45,16 @@ The word count system follows the classic MapReduce workflow:
    - Aggregate word counts
    - Generate final output
 
+## System Architecture Diagram
+![System Architecture Diagram](assets/diagram.png)
+
+**Explanation:**
+- **Input Processing**: The raw input text is cleaned, converted into words, and distributed to mapper threads.
+- **Mapping Phase**: Parallel threads process text chunks independently and generate intermediate key-value pairs for each word.
+- **Shuffling Phase**: A centralized process sorts and groups the key-value pairs for easier reduction.
+- **Reducing Phase**: Multiple threads work on grouped keys to calculate the final counts.
+- **Final Output**: The aggregated word frequencies are displayed in a user-friendly format.
+
 ## Prerequisites
 
 - C++ Compiler (with pthread support)
