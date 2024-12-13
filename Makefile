@@ -1,10 +1,10 @@
 all: com test_build
 
-com: main.cpp functions.cpp
-	g++ -o main main.cpp functions.cpp -lpthread
+com: src/main.cpp src/functions.cpp
+	g++ -o main src/main.cpp src/functions.cpp -lpthread
 
-test_build: testcases.cpp functions.cpp
-	g++ -o test_cases testcases.cpp functions.cpp -lpthread
+test_build: src/testcases.cpp src/functions.cpp
+	g++ -o test_cases src/testcases.cpp src/functions.cpp -lpthread -I src/
 
 main: com
 	./main
