@@ -47,7 +47,7 @@ The word count system follows the classic MapReduce workflow:
 
 ## System Architecture Diagram
 <p align="center">
-    <img src="assets/diagram.png" alt="System Architecture Diagram" width="400"/>
+    <img src="assets/diagram.png" alt="System Architecture Diagram" width="300"/>
 </p>
 
 **Explanation:**
