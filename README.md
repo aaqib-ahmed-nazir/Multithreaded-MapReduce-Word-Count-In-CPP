@@ -9,11 +9,12 @@ This project implements a simplified MapReduce model for parallel word counting,
 ```
 Multithreaded-MapReduce-Word-Count-In-CPP/
 │
-├── Makefile            # Build configuration and commands
-├── main.cpp            # Main program entry point
-├── functions.cpp       # Implementation of core MapReduce functions
-├── functions.h         # Header file with function declarations
-└── testcases.cpp       # Test cases for the MapReduce implementation
+├── src/
+│   ├── main.cpp            # Main program entry point
+│   ├── functions.cpp       # Implementation of core MapReduce functions
+│   ├── functions.h         # Header file with function declarations
+│   └── testcases.cpp       # Test cases for the MapReduce implementation
+├── Makefile                # Build configuration and commands
 ```
 
 ## Key Features
