@@ -46,7 +46,9 @@ The word count system follows the classic MapReduce workflow:
    - Generate final output
 
 ## System Architecture Diagram
-![System Architecture Diagram](assets/diagram.png)
+<p align="center">
+    <img src="assets/diagram.png" alt="System Architecture Diagram" width="400"/>
+</p>
 
 **Explanation:**
 - **Input Processing**: The raw input text is cleaned, converted into words, and distributed to mapper threads.
